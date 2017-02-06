@@ -1,0 +1,106 @@
+
+<div ng-controller="BlogController" class="md-padding" ng-cloak style="background-color:white">
+    <div>
+    <h1 style="text-align:center;"> RBK blogs </h1>
+     <center>	<input type='text' ng-model='search' class='search'placeholder='filter' style="background-color: grey; margin-top:2em; border-color: white;" /> </center>
+  
+     		<ul>
+     		 <form name='shortlyForm' ng-submit="addBlog()" novalidate>
+
+     		  <input name='bl' type="textarea"
+        ng-model="blogs.name"
+        value="{blogs.name}" 
+        placeholder="name" required
+        ng-class="{'error': shortlyForm.$invalid && shortlyForm.$dirty}"/>
+
+
+      <input name='bl' type="textarea"
+        ng-model="blogs.title"
+        value={blogs.}
+        placeholder="title" required
+        ng-class="{'error': shortlyForm.$invalid && shortlyForm.$dirty}"/>
+
+         <input name='bl' type="textarea"
+        ng-model="blogs.blog"
+        value={blogs.blog}
+        placeholder="Enter your blog here" required
+        ng-class="{'error': shortlyForm.$invalid && shortlyForm.$dirty}"/>
+
+      <button type="submit" value="post" >
+        add
+      </button>
+    </form>
+
+
+
+        </ul>
+     	<br><br><br><br>
+     	<div class="blogs">
+	         <center>
+	         <div class="blog row" style="background-color: #99c2ff
+				;opacity:0.8;text-align:left;font-family:Futura,Trebuchet MS,Arial,sans-serif;line-height:380%;" 
+	            ng-repeat="blog in x | filter:search">
+		        <div class="col-lg-1 col-md-0 col-sm-0"></div>
+		      	<div class="col-lg-3 col-md-3 col-sm-6">
+		        <!-- 	<img style='margin-top:2em'src="{{blog.image}}" class="profilePic img-circle"><br><br><br><br>
+		      	</div> -->
+		      	<div class="col-lg-1 col-md-0 col-sm-0"></div>
+		      	<div class="blogInfo col-lg-7 col-md-8 col-sm-6">
+		      		<h2>{{blog.name}}</h2>
+			        <h2>{{blog.title}}</h2>
+			        <h3>{{blog.blog}}</h3>
+			        <br>
+			        <hr>
+			        <br>
+		      	</div>
+    		</div>
+    		</center>
+    	</div>
+	</div>
+</div>
+
+
+<!-- 
+<md-dialog aria-label="Blog"  ng-cloak>
+  <form>
+    <md-toolbar>
+      <div class="md-toolbar-tools myToolbar">
+        <span flex></span>
+      </div>
+    </md-toolbar>
+    <br>
+    <md-dialog-content>
+
+        <h3>
+        <div>
+          <label for="title" class="editLabel">&nbsp;&nbsp;&nbsp;&nbsp;Title</label>
+          <input name='title' type="text"
+            ng-model="blog.title"
+            placeholder="Enter your title here" value="{blog.title}" class="editInput"/><br><br>
+        </div>
+        <div>
+          <label for="blog" class="editLabel">&nbsp;&nbsp;&nbsp;&nbsp;Content</label>
+          <textarea rows="10" cols="60" name="blog" ng-model="blog.blog" placeholder="Enter your content here"
+          value="{blog.blog}" class="editInput"> 
+          </textarea><br><br>
+        </div>
+        <div>
+          <br>
+          <label ng-show="filled===false" ng-hide="filled===true" style="color:red;">{{errorMsg}}</label>
+        </div>
+        </h3>
+
+    </md-dialog-content>
+    <md-dialog-actions layout="row">
+      <span flex></span>
+      <md-button ng-click="answer()">
+       Post
+      </md-button>
+      <md-button ng-click="cancel()">
+       Cancel
+      </md-button>
+    </md-dialog-actions>
+  </form>
+</md-dialog>
+ -->
+
